@@ -53,16 +53,27 @@ class PortUpdater:
         port_regex = re.compile(r"public port (\d+)")
         while not self.stop_event.is_set():
             try:
-                result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True, timeout=15)
+                # Increased timeout to 30 seconds for better stability
+                result = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True, timeout=30)
                 if match := port_regex.search(result):
                     port = int(match.group(1))
                     with self.port_lock:
                         if port != self.latest_vpn_port:
                             logging.info(f"VPN Port acquired: {port}")
                             self.latest_vpn_port = port
+            except subprocess.TimeoutExpired:
+                logging.info("VPN port request timed out. Retrying in 45s...")
+            except subprocess.CalledProcessError as e:
+                if "The gateway does not support NAT-PMP" in e.output:
+                    logging.warning("Connected VPN server does not support port forwarding.")
+                else:
+                    logging.error(f"VPN command failed: {e.output.strip()}")
             except Exception as e:
-                if "timeout" in str(e).lower() or "unreachable" in str(e).lower(): logging.info("Waiting for VPN...")
-                else: logging.error(f"VPN error: {e}")
+                if "timeout" in str(e).lower() or "unreachable" in str(e).lower():
+                    logging.info("Waiting for VPN connection...")
+                else:
+                    logging.error(f"Unexpected VPN error: {e}")
+            
             self.stop_event.wait(45)
 
     def run(self):

@@ -1,2 +1,9 @@
 2026-03-03 16:09:58,109 - INFO - Starting Port Forwarding Updater...
 2026-03-03 16:09:58,324 - INFO - VPN Port acquired: 56958
+2026-03-03 16:10:08,144 - INFO - Updated qBittorrent port to 56958
+2026-03-03 16:13:43,717 - INFO - VPN Port acquired: 63948
+2026-03-03 16:13:48,378 - INFO - Updated qBittorrent port to 63948
+2026-03-03 16:14:43,723 - ERROR - VPN error: Command '['/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/bin/python3', '/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/lib/python3.14/site-packages/natpmp/natpmp_client.py', '-g', '10.2.0.1', '0', '0']' timed out after 15 seconds
+2026-03-03 16:15:43,729 - ERROR - VPN error: Command '['/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/bin/python3', '/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/lib/python3.14/site-packages/natpmp/natpmp_client.py', '-g', '10.2.0.1', '0', '0']' timed out after 15 seconds
+2026-03-03 16:16:43,810 - ERROR - VPN error: Command '['/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/bin/python3', '/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/lib/python3.14/site-packages/natpmp/natpmp_client.py', '-g', '10.2.0.1', '0', '0']' timed out after 15 seconds
+2026-03-03 16:17:43,886 - ERROR - VPN error: Command '['/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/bin/python3', '/Users/evan/~DIY-Scripts/Proton-Port-Sync/venv/lib/python3.14/site-packages/natpmp/natpmp_client.py', '-g', '10.2.0.1', '0', '0']' timed out after 15 seconds
