@@ -1,0 +1,8 @@
+.DS_Store
+._*
+*.v2.bak
+*.v3.bak
+*.bak
+updater.log
+config.ini
+venv/
