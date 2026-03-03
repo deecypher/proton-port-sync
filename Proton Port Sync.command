@@ -172,7 +172,7 @@ echo "Press ENTER to accept defaults, or type to change them."
 echo ""
 
 QBT_ADDR=$(get_input "qBittorrent WebUI Address" "localhost")
-QBT_PORT=$(get_input "qBittorrent WebUI Port" "8080")
+QBT_PORT=$(get_input "qBittorrent WebUI Port" "8081")
 QBT_USER=$(get_input "qBittorrent WebUI Username" "admin")
 
 while true; do
